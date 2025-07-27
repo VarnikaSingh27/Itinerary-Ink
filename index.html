@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Discover Incredible India</title>
+  <style>
+    body {
+      font-family: 'Mukta', sans-serif;
+      background-color: #f0f0f0;
+      background-image: url('https://i.pinimg.com/736x/68/73/d1/6873d1aa70ac5584f770e5521b358ba6.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      margin: 0;
+      padding: 0;
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #333;
+    }
+
+    .container {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+      margin: 20px auto;
+      max-width: 800px;
+      border: 2px solid hsl(220, 100%, 63%);
+    }
+
+    .header-banner {
+      background-image: url('https://i.pinimg.com/736x/58/39/00/58390051ee0ace61137b5834437181dc.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1.title {
+      color: #333;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .form-group label {
+      font-weight: bold;
+      color: #666;
+      margin-right: 5px;
+      display: block;
+    }
+
+    input, select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    input[type="checkbox"] {
+      width: auto;
+      margin-right: 5px;
+    }
+
+    button {
+      background-color: hsl(220, 100%, 63%);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: hsl(220, 90%, 55%);
+    }
+
+    #itinerary {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0.8);
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .itinerary-row {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .itinerary-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 200px;
+      margin: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .itinerary-item img {
+      max-width: 100%;
+      border-radius: 5px 5px 0 0;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;  /* Allows wrapping of elements if needed */
+      justify-content: space-between;  /* Distributes checkboxes evenly */
+      gap: 20px;  /* Adds space between checkboxes */
+    }
+
+    .checkbox-group input {
+      margin-right: 5px;  /* Adds space between checkboxes and their labels */
+    }
+
+    .checkbox-group label {
+      display: inline-block;
+      margin-right: 15px;  /* Adds some space between the labels */
+      white-space: nowrap;  /* Prevents labels from wrapping to new lines */
+    }
+
+    .combined-group {
+      font-weight: bold;
+      color: #666;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px; /* Adds space between the elements */
+    }
+
+    .combined-group > div {
+      flex: 1;
+      min-width: 200px;
+    }
+
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;700&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="header-banner">
+  </div>
+  <div class="container">
+    <h1 class="title">Explore the Vibrant Hues of India</h1>
+    <form id="itineraryForm" action="index.php" method="post">
+      <div class="form-group">
+        <label for="destination">Your Dream Destination:</label>
+        <input type="text" id="destination" name="destination" placeholder="e.g., Delhi, Mumbai, Goa">
+      </div>
+
+      <div class="form-group">
+        <label for="interests">Your Interests:</label>
+        <div class="checkbox-group">
+            <input type="checkbox" name="interests[]" value="Historical" id="historical">
+            <label for="historical">History's Echoes</label>
+            
+            <input type="checkbox" name="interests[]" value="Nature" id="nature">
+            <label for="nature">Nature's Bliss</label>
+            
+            <input type="checkbox" name="interests[]" value="Culinary" id="culinary">
+            <label for="culinary">Culinary Delights</label>
+            
+            <input type="checkbox" name="interests[]" value="Adventure" id="adventure">
+            <label for="adventure">Adventure Awaits</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" name="startDate" required>
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" name="endDate" required>
+      </div>
+
+      <div class="combined-group">
+        <div class="trip-group">
+          <label for="tripType">Trip Type:</label>
+          <select id="tripType" name="tripType">
+            <option value="leisure">Leisure Trip</option>
+            <option value="work">Work Trip</option>
+            <option value="family">Family Trip</option>
+            <option value="friends">Friends Trip</option>
+            <option value="solo">Solo Trip</option>
+          </select>
+        </div>
+        <div class="trip-group">
+          <label for="groupSize">Group Size:</label>
+          <input type="number" id="groupSize" name="groupSize" placeholder="Enter group size">
+        </div>
+        <div class="style-group">
+          <label for="travelStyle">Travel Style:</label>
+          <select id="travelStyle" name="travelStyle">
+            <option value="luxury">Luxury</option>
+            <option value="economy">Economy</option>
+            <option value="prime">Prime</option>
+          </select>
+        </div>
+      </div>
+    <br>
+      <button type="submit" name="s1">Unveil Your Indian Adventure</button>
+    </form>
+  </div>
+</body>
+</html>
